@@ -1,9 +1,13 @@
 import styled from "styled-components";
+import bgImg from "@/assets/images/vuubpj07ny571.jpg";
 
 export const MainContainer = styled.div`
   margin: 0;
   padding: 0;
-  background-color: salmon;
+  background-image: url(${bgImg?.src});
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -19,11 +23,22 @@ export const ClockInformation = styled.div`
   button {
     border: none;
     border-radius: 10em;
-    padding: 1.5em;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 600;
-    width: 13em;
+    padding: 1em 2em;
+    width: 12em;
+    color: gray;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      fill: gray;
+      width: 1em;
+      height: auto;
+    }
   }
 `;
 
@@ -59,6 +74,8 @@ export const TimeInformation = styled.div`
     svg {
       fill: white;
       margin-right: 0.5em;
+      width: 0.85em;
+      height: auto;
     }
   }
 `;
