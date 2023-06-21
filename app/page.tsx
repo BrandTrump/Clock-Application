@@ -1,10 +1,13 @@
 "use client";
-import { MainContainer } from "@/components/styles/HomePage.styled";
+import {
+  ClockInformation,
+  MainContainer,
+} from "@/components/styles/HomePage.styled";
 
 export default function Home() {
   return (
     <MainContainer>
-      <div>
+      <ClockInformation>
         <div>
           <div>
             <p>&quot;This is an inspirational quote from...&quot;</p>
@@ -18,9 +21,9 @@ export default function Home() {
             11:37 <span>BST</span>
           </h1>
           <h2>In London, UK</h2>
+          <button>More</button>
         </div>
-      </div>
-      <button>More</button>
+      </ClockInformation>
     </MainContainer>
   );
 }
