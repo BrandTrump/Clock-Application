@@ -17,15 +17,12 @@ This is a solution to the [Clock app challenge on Frontend Mentor](https://www.f
 
 Users should be able to:
 
-- View an age in years, months, and days after submitting a valid date through the form
-- Receive validation errors if:
-- Any field is empty when the form is submitted
-- The day number is not between 1-31
-- The month number is not between 1-12
-- The year is in the future
-- The date is invalid, e.g. 31/04/1991 (there are 30 days in April)
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View the current time and location information based on their IP address
+- View additional information about the date and time in the expanded state
+- Be shown the correct greeting and background image based on the time of day they're visiting the site
+- Generate random programming quotes by clicking the refresh icon near the quote
 
 ## My process
 
