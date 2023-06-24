@@ -27,7 +27,7 @@ export const ClockInformation = styled.div`
     text-transform: uppercase;
     font-weight: 600;
     padding: 1em 2em;
-    width: 12em;
+    width: 10em;
     color: gray;
     background-color: white;
     display: flex;
@@ -38,6 +38,13 @@ export const ClockInformation = styled.div`
       fill: gray;
       width: 1em;
       height: auto;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    button {
+      width: 14em;
+      height: 5em;
     }
   }
 `;
@@ -52,6 +59,12 @@ export const TimeContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4em;
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export const TimeInformation = styled.div`
