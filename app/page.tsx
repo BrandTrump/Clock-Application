@@ -1,4 +1,5 @@
 "use client";
+import QuoteSection from "@/components/QuoteSection";
 import {
   ClockInformation,
   MainContainer,
@@ -12,14 +13,7 @@ export default function Home() {
     <MainContainer>
       <ClockInformation>
         <QuoteContainer>
-          <div>
-            <p>
-              &quot;The science of operations, as derived from mathematics more
-              especially, is a science of itself, and has its own abstract truth
-              and value.&quot;
-            </p>
-          </div>
-          <h1>Ada Lovelace</h1>
+          <QuoteSection />
         </QuoteContainer>
 
         <TimeContainer>
