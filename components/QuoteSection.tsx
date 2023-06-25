@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 
-type Advice = {
-  id: number;
-  advice: string;
+type Quote = {
+  content: string;
+  author: string;
 };
 
 function QuoteSection() {
-  const [advice, setAdvice] = useState<Advice>({ id: 0, advice: "" });
+  const [quote, setQuote] = useState<Quote>();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://api.adviceslip.com/advice")
+    fetch("https://api.quotable.io/random")
       .then((response) => response.json())
       .then((data) => {
-        setAdvice(data.slip);
+        setQuote(data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -25,9 +25,9 @@ function QuoteSection() {
   return (
     <>
       <div>
-        {isLoading ? <p>Loading...</p> : <p>&quot;{advice.advice}&quot;</p>}
+        {isLoading ? <p>Loading...</p> : <p>&quot;{quote?.content}&quot;</p>}
       </div>
-      <h1>Ada Lovelace</h1>
+      <h1>{quote?.author}</h1>
     </>
   );
 }
