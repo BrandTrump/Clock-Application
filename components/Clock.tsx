@@ -22,6 +22,10 @@ function Clock() {
     fetchData();
   }, []);
 
+  if (!time) {
+    return <div>Loading...</div>;
+  }
+
   const dateTime = new Date(time!.datetime);
   const hours = dateTime.getUTCHours();
   const minutes = dateTime.getUTCMinutes().toString().padStart(2, "0");
@@ -29,14 +33,10 @@ function Clock() {
 
   return (
     <>
-      {!time ? (
-        <p>Loading...</p>
-      ) : (
-        <h1>
-          {time24HourFormat}
-          <span>{time.abbreviation}</span>
-        </h1>
-      )}
+      <h1>
+        {time24HourFormat}
+        <span>{time.abbreviation}</span>
+      </h1>
     </>
   );
 }
