@@ -1,4 +1,5 @@
 "use client";
+import Clock from "@/components/Clock";
 import QuoteSection from "@/components/QuoteSection";
 import {
   ClockInformation,
@@ -30,9 +31,7 @@ export default function Home() {
               </span>
               Good Morning
             </h2>
-            <h1>
-              11:37 <span>BST</span>
-            </h1>
+            <Clock />
             <h2>In London, UK</h2>
           </TimeInformation>
           <button>
