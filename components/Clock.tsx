@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 type TimeInfo = {
   datetime: number;
+  abbreviation: string;
 };
 
 function Clock() {
@@ -33,7 +34,7 @@ function Clock() {
       ) : (
         <h1>
           {time24HourFormat}
-          <span>BST</span>
+          <span>{time.abbreviation}</span>
         </h1>
       )}
     </>
