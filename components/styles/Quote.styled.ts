@@ -9,4 +9,10 @@ export const StyledQuote = styled.div`
     fill: white;
     cursor: pointer;
   }
+
+  @media screen and (min-width: 1200px) {
+    p {
+      font-size: 1.2rem;
+    }
+  }
 `;
