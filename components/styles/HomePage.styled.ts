@@ -33,6 +33,12 @@ export const ClockInformation = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: lightgray;
+      transition: 0.5s;
+    }
 
     svg {
       fill: gray;
