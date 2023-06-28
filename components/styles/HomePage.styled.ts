@@ -1,7 +1,18 @@
 import styled from "styled-components";
 import bgImg from "@/assets/images/vuubpj07ny571.jpg";
 
-export const MainContainer = styled.div`
+interface MainContainerProps {
+  expanded: string;
+  bgImg?: {
+    src: string;
+  };
+}
+
+export const PageContainer = styled.div`
+  height: 100vh;
+`;
+
+export const MainContainer = styled.div<MainContainerProps>`
   margin: 0;
   padding: 0;
   background-image: url(${bgImg?.src});
@@ -10,13 +21,15 @@ export const MainContainer = styled.div`
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: ${({ expanded }) => (expanded === "true" ? "50%" : "100%")};
+  transition: 0.5s;
 `;
 
-export const ClockInformation = styled.div`
+export const ClockInformation = styled.div<MainContainerProps>`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: ${({ expanded }) =>
+    expanded === "true" ? "end" : "space-between"};
   height: 100%;
   padding: 3em 2em;
 
@@ -26,7 +39,7 @@ export const ClockInformation = styled.div`
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 600;
-    padding: 1em 2em;
+    padding: 0.5em 0.5em 0.5em 2em;
     width: 10em;
     color: gray;
     background-color: white;
@@ -44,18 +57,26 @@ export const ClockInformation = styled.div`
       fill: gray;
       width: 1em;
       height: auto;
+      background-color: black;
+      padding: 1em;
+      border-radius: 50%;
+      rotate: ${({ expanded }) => (expanded === "true" ? "180deg" : "0")};
     }
   }
 
   @media screen and (min-width: 1200px) {
+    min-width: 1200px;
+    margin: 0 auto;
+
     button {
       width: 14em;
-      height: 5em;
     }
   }
 `;
 
-export const QuoteContainer = styled.div`
+export const QuoteContainer = styled.div<MainContainerProps>`
+  display: ${({ expanded }) => (expanded === "true" ? "none" : "")};
+
   h1 {
     font-size: 1.1rem;
   }
@@ -73,28 +94,51 @@ export const TimeContainer = styled.div`
   }
 `;
 
-export const TimeInformation = styled.div`
-  h1 {
-    font-size: 6rem;
-    padding: 0;
-    margin: 0;
+export const TimezoneContainer = styled.div<MainContainerProps>`
+  display: ${({ expanded }) => (expanded === "true" ? "flex" : "none")};
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1em;
+  height: 50%;
+  color: black;
+  transition: 1s;
 
-    span {
-      font-size: 1rem;
-      font-weight: 300;
-    }
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
   }
+`;
+
+export const TimezoneDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   h2 {
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 300;
+    font-size: 1rem;
+    color: gray;
+  }
 
-    svg {
-      fill: white;
-      margin-right: 0.5em;
-      width: 0.85em;
-      height: auto;
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: column;
+    align-items: start;
+    margin-top: 4em;
+
+    h2 {
+      font-size: 1.5rem;
+      color: gray;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 3.5rem;
     }
   }
 `;
