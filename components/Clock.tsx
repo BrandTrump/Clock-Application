@@ -1,29 +1,10 @@
-import { getTime } from "@/helpers/getCurrentTime";
-import { useEffect, useState } from "react";
 import { TimeInformation } from "./styles/Clock.styled";
 
-type TimeInfo = {
-  utc_datetime: number;
-  abbreviation: string;
-  timezone: string;
+type Props = {
+  time: TimeInfo;
 };
 
-function Clock() {
-  const [time, setTime] = useState<TimeInfo>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getTime();
-        setTime(data);
-      } catch (error) {
-        console.error("Failed to fetch time:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+function Clock({ time }: Props) {
   if (!time) {
     return <div>Loading...</div>;
   }
