@@ -8,6 +8,7 @@ export const StyledQuote = styled.div`
   svg {
     fill: white;
     cursor: pointer;
+    min-width: 1.5em;
   }
 
   @media screen and (min-width: 1200px) {
