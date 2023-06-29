@@ -31,7 +31,7 @@ export default function Home() {
     setExpanded(!expanded);
   };
   return (
-    <PageContainer>
+    <PageContainer background={background.toString()}>
       <MainContainer
         expanded={expanded.toString()}
         background={background.toString()}
@@ -59,7 +59,10 @@ export default function Home() {
           </TimeContainer>
         </ClockInformation>
       </MainContainer>
-      <TimezoneContainer expanded={expanded.toString()}>
+      <TimezoneContainer
+        expanded={expanded.toString()}
+        background={background.toString()}
+      >
         <TimezoneSection time={time} />
       </TimezoneContainer>
     </PageContainer>
