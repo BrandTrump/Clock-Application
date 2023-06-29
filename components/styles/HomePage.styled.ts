@@ -3,12 +3,14 @@ import bgImg from "@/assets/images/vuubpj07ny571.jpg";
 import bgImg2 from "@/assets/images/fz9wrpd91qi71.jpg";
 
 interface MainContainerProps {
-  expanded: string;
+  expanded?: string;
   background?: string;
 }
 
-export const PageContainer = styled.div`
+export const PageContainer = styled.div<MainContainerProps>`
   height: 100vh;
+  background-color: ${({ background }) =>
+    background === "true" ? "" : "#131924"};
 `;
 
 export const MainContainer = styled.div<MainContainerProps>`
@@ -100,7 +102,7 @@ export const TimezoneContainer = styled.div<MainContainerProps>`
   justify-content: center;
   padding: 0 1em;
   height: 50%;
-  color: black;
+  color: ${({ background }) => (background === "true" ? "black" : "white")};
   transition: 1s;
 
   @media screen and (min-width: 1200px) {
