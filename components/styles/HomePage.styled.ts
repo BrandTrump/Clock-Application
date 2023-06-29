@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import bgImg from "@/assets/images/vuubpj07ny571.jpg";
+import bgImg2 from "@/assets/images/fz9wrpd91qi71.jpg";
 
 interface MainContainerProps {
   expanded: string;
-  bgImg?: {
-    src: string;
-  };
+  background?: string;
 }
 
 export const PageContainer = styled.div`
@@ -15,7 +14,8 @@ export const PageContainer = styled.div`
 export const MainContainer = styled.div<MainContainerProps>`
   margin: 0;
   padding: 0;
-  background-image: url(${bgImg?.src});
+  background-image: ${({ background }) =>
+    background === "true" ? `url(${bgImg?.src})` : `url(${bgImg2?.src})`};
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -120,6 +120,7 @@ export const TimezoneDetails = styled.div`
   h2 {
     font-size: 1rem;
     color: gray;
+    font-weight: 400;
   }
 
   h1 {
