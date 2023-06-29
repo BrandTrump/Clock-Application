@@ -15,9 +15,14 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [time, getTime] = useTimeStore((state) => [state.time, state.getTime]);
+  const [background, setBackground] = useState(false);
 
   useEffect(() => {
     getTime();
+
+    const dateTime = new Date();
+    const currentHour = dateTime.getHours();
+    currentHour >= 18 ? setBackground(false) : setBackground(true);
   }, [getTime]);
 
   const [expanded, setExpanded] = useState(false);
@@ -27,7 +32,10 @@ export default function Home() {
   };
   return (
     <PageContainer>
-      <MainContainer expanded={expanded.toString()}>
+      <MainContainer
+        expanded={expanded.toString()}
+        background={background.toString()}
+      >
         <ClockInformation expanded={expanded.toString()}>
           <QuoteContainer expanded={expanded.toString()}>
             <QuoteSection />
