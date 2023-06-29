@@ -36,6 +36,7 @@ Users should be able to:
 ### Learnings
 
 - Styled components: (https://styled-components.com/).
+- Zustand state management
 
 ### Useful resources
 
