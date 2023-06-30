@@ -33,7 +33,7 @@ export const ClockInformation = styled.div<MainContainerProps>`
   justify-content: ${({ expanded }) =>
     expanded === "true" ? "end" : "space-between"};
   height: 100%;
-  padding: 3em 2em;
+  padding: 3em 2em 15em;
 
   button {
     border: none;
@@ -69,6 +69,7 @@ export const ClockInformation = styled.div<MainContainerProps>`
   @media screen and (min-width: 1200px) {
     min-width: 1200px;
     margin: 0 auto;
+    padding: 3em 2em;
 
     button {
       width: 14em;
