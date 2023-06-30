@@ -33,7 +33,7 @@ export const ClockInformation = styled.div<MainContainerProps>`
   justify-content: ${({ expanded }) =>
     expanded === "true" ? "end" : "space-between"};
   height: 100%;
-  padding: 3em 2em 15em;
+  padding: 3em 2em 8em;
 
   button {
     border: none;
