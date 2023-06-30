@@ -42,6 +42,7 @@ Users should be able to:
 
 - [Styled components: Documentaion](https://styled-components.com/docs/basics#getting-started)
 - [Styled components: Tutorial - Traversy Media](https://www.youtube.com/watch?v=02zO0hZmwnw&t=450s)
+- [Zustand: Documentation](https://github.com/pmndrs/zustand)
 
 ## Author
 
