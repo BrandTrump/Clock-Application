@@ -8,7 +8,7 @@ interface MainContainerProps {
 }
 
 export const PageContainer = styled.div<MainContainerProps>`
-  height: 100vh;
+  height: 100%;
   background-color: ${({ background }) =>
     background === "true" ? "" : "#131924"};
 `;
