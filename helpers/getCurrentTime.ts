@@ -1,12 +1,12 @@
+import Ipbase from "@everapi/ipbase-js";
+
 export async function getTime() {
-  const res = await fetch(
-    "http://worldtimeapi.org/api/timezone/Pacific/Auckland",
-    { cache: "no-store" }
-  );
+  try {
+    const ipBase = new Ipbase(process.env.IPBASE_API_KEY);
+    const res = await ipBase.info();
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return res;
+  } catch (error) {
+    console.log(error);
   }
-
-  return res.json();
 }
