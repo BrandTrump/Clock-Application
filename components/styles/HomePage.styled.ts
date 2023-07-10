@@ -23,8 +23,12 @@ export const MainContainer = styled.div<MainContainerProps>`
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  height: ${({ expanded }) => (expanded === "true" ? "50%" : "100%")};
+  height: ${({ expanded }) => (expanded === "true" ? "65%" : "100%")};
   transition: 0.5s;
+
+  @media screen and (min-width: 1200px) {
+    height: ${({ expanded }) => (expanded === "true" ? "50%" : "100%")};
+  }
 `;
 
 export const ClockInformation = styled.div<MainContainerProps>`
@@ -33,7 +37,7 @@ export const ClockInformation = styled.div<MainContainerProps>`
   justify-content: ${({ expanded }) =>
     expanded === "true" ? "end" : "space-between"};
   height: 100%;
-  padding: 3em 2em 8em;
+  padding: 3em 2em;
 
   button {
     border: none;
@@ -102,7 +106,7 @@ export const TimezoneContainer = styled.div<MainContainerProps>`
   flex-direction: column;
   justify-content: center;
   padding: 0 1em;
-  height: 50%;
+  height: 35%;
   color: ${({ background }) => (background === "true" ? "black" : "white")};
   transition: 1s;
 
@@ -112,6 +116,7 @@ export const TimezoneContainer = styled.div<MainContainerProps>`
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    height: 50%;
   }
 `;
 
