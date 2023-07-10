@@ -2,18 +2,39 @@ import { getTime } from "@/helpers/getCurrentTime";
 import { create } from "zustand";
 
 interface Time {
-  time: TimeInfo;
+  time: FetchedData;
   getTime: () => void;
 }
 
 export const useTimeStore = create<Time>()((set) => ({
   time: {
-    utc_datetime: 0,
-    abbreviation: "",
-    timezone: "",
-    day_of_week: 0,
-    day_of_year: 0,
-    week_number: 0,
+    data: {
+      timezone: {
+        id: "",
+        current_time: "",
+        code: "",
+        is_daylight_saving: false,
+        gmt_offset: 0,
+      },
+      location: {
+        continent: {
+          code: "",
+          name: "",
+        },
+        country: {
+          calling_codes: [],
+          currencies: [{ name: "" }],
+          languages: [{ name: "", name_native: "" }],
+          name: "",
+          name_translated: "",
+          timezones: [],
+        },
+        city: {
+          name: "",
+          name_translated: "",
+        },
+      },
+    },
   },
 
   getTime: async () => {
