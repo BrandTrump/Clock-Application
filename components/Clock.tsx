@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { StyledGreeting, TimeInformation } from "./styles/Clock.styled";
 
 type Props = {
-  time: TimeInfo;
+  time: FetchedData;
 };
 
 function Clock({ time }: Props) {
@@ -66,9 +66,9 @@ function Clock({ time }: Props) {
         </StyledGreeting>
         <h1>
           {time24HourFormat}
-          <span>{time.abbreviation}</span>
+          <span>{time.data.timezone.code}</span>
         </h1>
-        <h2>In {time.timezone}</h2>
+        <h2>In {time.data.location.country.name}</h2>
       </TimeInformation>
     </>
   );

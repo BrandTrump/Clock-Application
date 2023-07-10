@@ -1,7 +1,7 @@
 import { TimezoneDetails } from "./styles/HomePage.styled";
 
 type Props = {
-  time: TimeInfo;
+  time: FetchedData;
 };
 
 function TimezoneSection({ time }: Props) {
@@ -10,21 +10,21 @@ function TimezoneSection({ time }: Props) {
       <div>
         <TimezoneDetails>
           <h2>Current Timezone</h2>
-          <h1>{time.timezone}</h1>
+          <h1>{time.data.timezone.id}</h1>
         </TimezoneDetails>
         <TimezoneDetails>
-          <h2>Day of the year</h2>
-          <h1>{time.day_of_year}</h1>
+          <h2>Calling Code</h2>
+          <h1>{time.data.location.country.calling_codes[0]}</h1>
         </TimezoneDetails>
       </div>
       <div>
         <TimezoneDetails>
-          <h2>Day of the Week</h2>
-          <h1>{time.day_of_week}</h1>
+          <h2>Currency</h2>
+          <h1>{time.data.location.country.currencies[0].name}</h1>
         </TimezoneDetails>
         <TimezoneDetails>
-          <h2>Week Number</h2>
-          <h1>{time.week_number}</h1>
+          <h2>Main Language</h2>
+          <h1>{time.data.location.country.languages[0].name}</h1>
         </TimezoneDetails>
       </div>
     </>
